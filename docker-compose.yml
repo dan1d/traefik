@@ -31,11 +31,11 @@ services:
       - "traefik.http.routers.website.entrypoints=websecure"
       - "traefik.http.routers.website.tls.certresolver=myresolver"
 
-  whoami2:
-    image: "traefik/whoami"
-    container_name: "simple-service-react"
-    labels:
-      - "traefik.enable=true"
-      - "traefik.http.routers.react.rule=Host(`ia-resume.com`, `www.ia-resume.com`)"
-      - "traefik.http.routers.react.entrypoints=websecure"
-      - "traefik.http.routers.react.tls.certresolver=myresolver"
+  # whoami2:
+  #   image: "traefik/whoami"
+  #   container_name: "simple-service-react"
+  #   labels:
+  #     - "traefik.enable=true"
+  #     - "traefik.http.routers.react.rule=Host(`ia-resume.com`, `www.ia-resume.com`)"
+  #     - "traefik.http.routers.react.entrypoints=websecure"
+  #     - "traefik.http.routers.react.tls.certresolver=myresolver"
