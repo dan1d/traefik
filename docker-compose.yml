@@ -22,20 +22,20 @@ services:
       - "./letsencrypt:/letsencrypt"
       - "/var/run/docker.sock:/var/run/docker.sock:ro"
 
-  # whoami:
-  #   image: "traefik/whoami"
-  #   container_name: "simple-service-ruby"
-  #   labels:
-  #     - "traefik.enable=true"
-  #     - "traefik.http.routers.whoami.rule=Host(`api.ia-resume.com`, `www.api.ia-resume.com`)"
-  #     - "traefik.http.routers.whoami.entrypoints=websecure"
-  #     - "traefik.http.routers.whoami.tls.certresolver=myresolver"
+  whoami:
+    image: "traefik/whoami"
+    container_name: "simple-service-ruby"
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.website.rule=Host(`api.ia-resume.com`, `www.api.ia-resume.com`)"
+      - "traefik.http.routers.website.entrypoints=websecure"
+      - "traefik.http.routers.website.tls.certresolver=myresolver"
 
-  # whoami2:
-  #   image: "traefik/whoami"
-  #   container_name: "simple-service-react"
-  #   labels:
-  #     - "traefik.enable=true"
-  #     - "traefik.http.routers.whoami2.rule=Host(`ia-resume.com`, `www.ia-resume.com`)"
-  #     - "traefik.http.routers.whoami2.entrypoints=websecure"
-  #     - "traefik.http.routers.whoami2.tls.certresolver=myresolver"
+  whoami2:
+    image: "traefik/whoami"
+    container_name: "simple-service-react"
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.react.rule=Host(`ia-resume.com`, `www.ia-resume.com`)"
+      - "traefik.http.routers.react.entrypoints=websecure"
+      - "traefik.http.routers.react.tls.certresolver=myresolver"
