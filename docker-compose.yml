@@ -5,7 +5,6 @@ services:
   traefik:
     image: "traefik:v2.9"
     container_name: "traefik"
-    network_mode: "host"
     command:
       #- "--log.level=DEBUG"
       - "--api.insecure=true"
@@ -40,3 +39,9 @@ services:
   #     - "traefik.http.routers.react.rule=Host(`ia-resume.com`, `www.ia-resume.com`)"
   #     - "traefik.http.routers.react.entrypoints=websecure"
   #     - "traefik.http.routers.react.tls.certresolver=myresolver"
+
+networks:
+  default:
+    # Use a custom driver
+    name: dan1d_network
+    driver: bridge
